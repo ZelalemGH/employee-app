@@ -5,7 +5,7 @@ const EmployeePage = (props) => {
   return (
     <div style={StyledHomePage}>
       <Header title="Employee" />
-      <EmployeeDetail employees={props.employees} />
+      <EmployeeDetail employees={props.employees[1]} />
     </div>
   )
 }

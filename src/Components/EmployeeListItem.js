@@ -1,18 +1,18 @@
 // import { useState } from 'react'
 
-const EmployeeListItem = ({ employees }) => {
+const EmployeeListItem = ({ image, name, title }) => {
   //   const [isOpen, setIsOpen] = useState(false)
-  return employees.map(({ image, name, title }, index) => {
-    return (
-      <div key={index} style={StyledEmployeeListItem}>
-        <img style={StyledImage} src={image} alt={image} />
-        <div style={StyledContent}>
-          <h3 style={{ margin: '0' }}>{name}</h3>
-          <p style={{ margin: '0' }}>{title}</p>
-        </div>
+  // return employees.map(({ image, name, title }, index) => {
+  return (
+    <div style={StyledEmployeeListItem}>
+      <img style={StyledImage} src={image} alt={image} />
+      <div style={StyledContent}>
+        <h3 style={{ margin: '0' }}>{name}</h3>
+        <p style={{ margin: '0' }}>{title}</p>
       </div>
-    )
-  })
+    </div>
+  )
+  // })
 }
 
 const StyledImage = {

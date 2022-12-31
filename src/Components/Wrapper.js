@@ -3,7 +3,7 @@ const Wrapper = (props) => {
 }
 
 const StyledWrapper = {
-  maxWidth: '700px',
+  maxWidth: '1000px',
   margin: '0 auto',
   backgroundColor: '#fff',
   display: 'flex',
