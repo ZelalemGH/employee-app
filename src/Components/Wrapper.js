@@ -8,6 +8,7 @@ const StyledWrapper = {
   backgroundColor: '#fff',
   display: 'flex',
   gap: '10px',
+  paddingTop: '20px',
 }
 
 export default Wrapper

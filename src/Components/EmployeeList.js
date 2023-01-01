@@ -8,7 +8,13 @@ const EmployeeList = (props) => {
   // )
   return props.employees.map(({ image, name, title }, index) => {
     return (
-      <EmployeeListItem key={index} image={image} name={name} title={title} />
+      <EmployeeListItem
+        key={index}
+        image={image}
+        name={name}
+        title={title}
+        onClick={() => props.setEmployeeDetail(props.employees[index])}
+      />
     )
   })
 }

@@ -8,6 +8,7 @@ import imageThree from './assets/images/image_Three.jpg'
 import imageFour from './assets/images/image_Four.jpg'
 import imageFive from './assets/images/image_Five.jpg'
 import imageSix from './assets/images/image_Six.jpg'
+import React from 'react'
 
 function App() {
   const employees = [
@@ -61,8 +62,8 @@ function App() {
       image: imageFive,
       title: 'VP of Sales',
       callOff: 7810000002,
-      callMobile: 2024183209,
-      sms: 2024183209,
+      callMobile: 2023760689,
+      sms: 2023760689,
       email: 'Raymoore@gmail.com',
     },
 
@@ -72,16 +73,19 @@ function App() {
       image: imageSix,
       title: 'QA Manager',
       callOff: 7810000002,
-      callMobile: 2024183209,
-      sms: 2024183209,
-      email: 'Raymoore@gmail.com',
+      callMobile: 2147706784,
+      sms: 2147706784,
+      email: 'Pauljo@gmail.com',
     },
   ]
+
+  const [employeeDetail, setEmployeeDetail] = React.useState(employees[0])
+  console.log(employeeDetail)
   return (
     <div className="App">
       <Wrapper>
-        <HomePage employees={employees} />
-        <EmployeePage employees={employees} />
+        <HomePage employees={employees} setEmployeeDetail={setEmployeeDetail} />
+        <EmployeePage employees={employees} employeeDetail={employeeDetail} />
       </Wrapper>
     </div>
   )

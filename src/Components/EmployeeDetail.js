@@ -1,45 +1,74 @@
 import React from 'react'
 
-const EmployeeDetail = ({ employees }) => {
-  const { image, name, title, callOff, callMobile, sms, email } = employees
-
-  // return employees.map(
-  //   ({ image, name, title, callOff, callMobile, sms, email }, index) => {
+const EmployeeDetail = ({ employeeDetail }) => {
   return (
-    <div style={StyledEmployeeDetail}>
-      <img style={StyledImage} src={image} alt={image} />
-      <div style={StyledContent}>
-        <h3 style={{ margin: '0' }}>{name}</h3>
-        <p style={{ margin: '0' }}>{title}</p>
-        <h3>Call Office</h3>
-        <p>{callOff}</p>
-        <h3>Call Mobile</h3>
-        <p>{callMobile}</p>
-        <h3>SMS</h3>
-        <p>{sms}</p>
-        <h3>Email</h3>
-        <p>{email}</p>
+    <div style={StyledEmployeeDetailPage}>
+      <div style={StyledEmployeeDetail}>
+        <img
+          style={StyledImage}
+          src={employeeDetail.image}
+          alt={employeeDetail.image}
+        />
+        <div>
+          <h4 style={{ margin: '0' }}>{employeeDetail.name}</h4>
+          <p style={{ margin: '0' }}>{employeeDetail.title}</p>
+        </div>
+      </div>
+      <div>
+        <ul style={StyledUl}>
+          <li>
+            <h3>Call Office</h3>
+            <p>{employeeDetail.callOff}</p>
+          </li>
+        </ul>
+        <ul style={StyledUl}>
+          <li>
+            <h3>Call Mobile </h3>
+            <p>{employeeDetail.callMobile}</p>
+          </li>
+        </ul>
+        <ul style={StyledUl}>
+          <li>
+            <h3>SMS</h3>
+            <p>{employeeDetail.sms}</p>
+          </li>
+        </ul>
+        <ul style={StyledUl}>
+          <li>
+            <h3>Email</h3>
+            <p>{employeeDetail.email}</p>
+          </li>
+        </ul>
       </div>
     </div>
   )
-  //   },
-  // )
 }
-
 const StyledImage = {
-  width: '40px',
-  height: '40px',
+  width: '80px',
+  height: '80px',
   borderRadius: '50%',
-  backgroundColor: '#f4f4f4',
 }
 
 const StyledEmployeeDetail = {
   display: 'flex',
   gap: '10px',
   margin: '5px',
+  borderBottom: '2px solid #f4f4f4',
+  padding: '10px 0',
 }
 
-const StyledContent = {
-  //   flex: 2,
+const StyledEmployeeDetailPage = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '10px',
+  border: '2px solid #f4f4f4',
+  marginRight: '10px',
 }
+
+const StyledUl = {
+  borderBottom: '2px solid #f4f4f4',
+  padding: '5px',
+  listStyle: 'none',
+}
+
 export default EmployeeDetail

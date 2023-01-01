@@ -5,13 +5,15 @@ const EmployeePage = (props) => {
   return (
     <div style={StyledHomePage}>
       <Header title="Employee" />
-      <EmployeeDetail employees={props.employees[1]} />
+      <EmployeeDetail
+        employees={props.employees}
+        employeeDetail={props.employeeDetail}
+      />
     </div>
   )
 }
 
 const StyledHomePage = {
   width: '50%',
-  backgroundColor: '#FFF9C4',
 }
 export default EmployeePage
