@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/employee-app/static/css/main.50ae1469.css",
-    "main.js": "/employee-app/static/js/main.959de1da.js",
+    "main.css": "/employee-app/static/css/main.ff894f15.css",
+    "main.js": "/employee-app/static/js/main.c4c81459.js",
     "static/media/image_Three.jpg": "/employee-app/static/media/image_Three.5791352a292d0fa4cc24.jpg",
     "static/media/image_Five.jpg": "/employee-app/static/media/image_Five.701c2f51a619e5774451.jpg",
     "static/media/image_Two.jpg": "/employee-app/static/media/image_Two.dc04d4c1a212ac81fc0e.jpg",
@@ -9,11 +9,11 @@
     "static/media/image_Six.jpg": "/employee-app/static/media/image_Six.40a9cbc174d3c0fdcac0.jpg",
     "static/media/image_Four.jpg": "/employee-app/static/media/image_Four.a83bdd199b4c9ac8a737.jpg",
     "index.html": "/employee-app/index.html",
-    "main.50ae1469.css.map": "/employee-app/static/css/main.50ae1469.css.map",
-    "main.959de1da.js.map": "/employee-app/static/js/main.959de1da.js.map"
+    "main.ff894f15.css.map": "/employee-app/static/css/main.ff894f15.css.map",
+    "main.c4c81459.js.map": "/employee-app/static/js/main.c4c81459.js.map"
   },
   "entrypoints": [
-    "static/css/main.50ae1469.css",
-    "static/js/main.959de1da.js"
+    "static/css/main.ff894f15.css",
+    "static/js/main.c4c81459.js"
   ]
 }
