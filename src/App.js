@@ -79,6 +79,7 @@ function App() {
     },
   ]
 
+  // Declare a new state variable, which we'll call "employeeDetail"
   const [employeeDetail, setEmployeeDetail] = React.useState(employees[0])
   console.log(employeeDetail)
   return (
