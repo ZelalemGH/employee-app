@@ -23,7 +23,7 @@ const EmployeeDetail = ({ employeeDetail }) => {
         </ul>
         <ul style={StyledUl}>
           <li>
-            <h3>Call Mobile </h3>
+            <h3>Call Mobile</h3>
             <p>{employeeDetail.callMobile}</p>
           </li>
         </ul>
@@ -51,10 +51,11 @@ const StyledImage = {
 
 const StyledEmployeeDetail = {
   display: 'flex',
-  gap: '10px',
+  gap: '15px',
   margin: '5px',
   borderBottom: '2px solid #f4f4f4',
   padding: '10px 0',
+  alignItems: 'center',
 }
 
 const StyledEmployeeDetailPage = {

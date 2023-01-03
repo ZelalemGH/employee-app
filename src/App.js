@@ -8,7 +8,7 @@ import imageThree from './assets/images/image_Three.jpg'
 import imageFour from './assets/images/image_Four.jpg'
 import imageFive from './assets/images/image_Five.jpg'
 import imageSix from './assets/images/image_Six.jpg'
-import React from 'react'
+import { useState } from 'react'
 
 function App() {
   const employees = [
@@ -80,7 +80,7 @@ function App() {
   ]
 
   // Declare a new state variable, which we'll call "employeeDetail"
-  const [employeeDetail, setEmployeeDetail] = React.useState(employees[0])
+  const [employeeDetail, setEmployeeDetail] = useState(employees[0])
   console.log(employeeDetail)
   return (
     <div className="App">

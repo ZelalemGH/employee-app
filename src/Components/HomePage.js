@@ -5,7 +5,9 @@ import SearchBar from './SearchBar'
 const HomePage = ({ employees, setEmployeeDetail }) => {
   return (
     <div style={StyledHomePage}>
-      <Header title="Employee Directory" />
+      <div style={StyledContent}>
+        <Header title="Employee Directory" />
+      </div>
       <SearchBar />
       <EmployeeList
         employees={employees}
@@ -17,5 +19,10 @@ const HomePage = ({ employees, setEmployeeDetail }) => {
 
 const StyledHomePage = {
   width: '50%',
+}
+
+const StyledContent = {
+  width: '100%',
+  marginLeft: '150px',
 }
 export default HomePage
