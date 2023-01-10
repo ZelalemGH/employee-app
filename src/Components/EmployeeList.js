@@ -6,17 +6,20 @@ const EmployeeList = (props) => {
   //     <EmployeeListItem employees={props.employees} />
   //   </div>
   // )
-  return props.employees.map(({ image, name, title }, index) => {
-    return (
-      <EmployeeListItem
-        key={index}
-        image={image}
-        name={name}
-        title={title}
-        onClick={() => props.setEmployeeDetail(props.employees[index])}
-      />
-    )
-  })
+  console.log('check employee', props)
+  if (props.employees) {
+    return props.employees.map(({ image, name, occupation }, index) => {
+      return (
+        <EmployeeListItem
+          key={index}
+          image={image}
+          name={name}
+          occupation={occupation}
+          onClick={() => props.setEmployeeDetail(props.employees[index])}
+        />
+      )
+    })
+  }
 }
 
 export default EmployeeList

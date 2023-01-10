@@ -2,91 +2,40 @@ import './App.css'
 import EmployeePage from './Components/EmployeePage'
 import HomePage from './Components/HomePage'
 import Wrapper from './Components/Wrapper'
+import { useState, useEffect } from 'react'
 import imageOne from './assets/images/image_One.jpg'
-import imageTwo from './assets/images/image_Two.jpg'
-import imageThree from './assets/images/image_Three.jpg'
-import imageFour from './assets/images/image_Four.jpg'
-import imageFive from './assets/images/image_Five.jpg'
-import imageSix from './assets/images/image_Six.jpg'
-import { useState } from 'react'
+import Form from './Components/Form'
 
 function App() {
-  const employees = [
-    {
-      id: 1,
-      name: 'James King',
-      image: imageOne,
-      title: 'President and CEO',
-      callOff: 7810000002,
-      callMobile: 2044445667,
-      sms: 2044445667,
-      email: 'Jamesking@gmail.com',
-    },
-
-    {
-      id: 2,
-      name: 'Juli Taylor',
-      image: imageTwo,
-      title: 'VP of Marketing',
-      callOff: 7810000002,
-      callMobile: 2033209918,
-      sms: 2033209918,
-      email: 'Julitaylor@gmail.com',
-    },
-
-    {
-      id: 3,
-      name: 'Eugene Lee',
-      image: imageThree,
-      title: 'CFO',
-      callOff: 7810000002,
-      callMobile: 2034527216,
-      sms: 2034527216,
-      email: 'Eugenelee@gmail.com',
-    },
-
-    {
-      id: 4,
-      name: 'John Williams',
-      image: imageFour,
-      title: 'VP of Engineering',
-      callOff: 7810000002,
-      callMobile: 2024183209,
-      sms: 2024183209,
-      email: 'Johnwilliams@gmail.com',
-    },
-
-    {
-      id: 5,
-      name: 'Ray Moore',
-      image: imageFive,
-      title: 'VP of Sales',
-      callOff: 7810000002,
-      callMobile: 2023760689,
-      sms: 2023760689,
-      email: 'Raymoore@gmail.com',
-    },
-
-    {
-      id: 6,
-      name: 'Paul Johnes',
-      image: imageSix,
-      title: 'QA Manager',
-      callOff: 7810000002,
-      callMobile: 2147706784,
-      sms: 2147706784,
-      email: 'Pauljo@gmail.com',
-    },
-  ]
+  // Declare a new state variable, which we'll call "employees"
+  const [employees, setEmployees] = useState([0])
+  useEffect(() => {
+    fetch(`https://lit-dusk-21328.herokuapp.com/api/employees/allemployees`)
+      .then((res) => res.json()) // getting the response in a json format
+      .then((data) => {
+        console.log(data)
+        setEmployees(data) // to update the value of employees and getting the data itself
+      })
+  }, [])
 
   // Declare a new state variable, which we'll call "employeeDetail"
-  const [employeeDetail, setEmployeeDetail] = useState(employees[0])
-  console.log(employeeDetail)
+  const [employeeDetail, setEmployeeDetail] = useState({
+    id: 1,
+    image: imageOne,
+    name: 'John Doe',
+    occupation: 'Front end dev',
+    callOffice: '1234567',
+    callMobile: '235690',
+    sms: '222333444',
+    email: 'solo@test.com',
+  })
+  console.log('employeeDetail', employeeDetail)
   return (
     <div className="App">
+      <Form />
       <Wrapper>
-        <HomePage employees={employees} setEmployeeDetail={setEmployeeDetail} />
-        <EmployeePage employees={employees} employeeDetail={employeeDetail} />
+        <HomePage setEmployeeDetail={setEmployeeDetail} employees={employees} />
+        <EmployeePage employeeDetail={employeeDetail} employees={employees} />
       </Wrapper>
     </div>
   )

@@ -11,14 +11,14 @@ const EmployeeDetail = ({ employeeDetail }) => {
         />
         <div>
           <h4 style={{ margin: '0' }}>{employeeDetail.name}</h4>
-          <p style={{ margin: '0' }}>{employeeDetail.title}</p>
+          <p style={{ margin: '0' }}>{employeeDetail.occupation}</p>
         </div>
       </div>
       <div>
         <ul style={StyledUl}>
           <li>
             <h3>Call Office</h3>
-            <p>{employeeDetail.callOff}</p>
+            <p>{employeeDetail.callOffice}</p>
           </li>
         </ul>
         <ul style={StyledUl}>

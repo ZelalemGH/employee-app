@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 
-const EmployeeListItem = ({ image, name, title, onClick }) => {
+const EmployeeListItem = ({ image, name, occupation, onClick }) => {
   //   const [isOpen, setIsOpen] = useState(false)
   // return employees.map(({ image, name, title }, index) => {
   return (
@@ -8,7 +8,7 @@ const EmployeeListItem = ({ image, name, title, onClick }) => {
       <img style={StyledImage} src={image} alt={image} />
       <div>
         <h3 style={{ margin: '0' }}>{name}</h3>
-        <p style={{ margin: '0' }}>{title}</p>
+        <p style={{ margin: '0' }}>{occupation}</p>
       </div>
     </div>
   )
