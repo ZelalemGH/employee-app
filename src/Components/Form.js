@@ -63,8 +63,6 @@ const Form = () => {
           placeholder="name"
           onChange={handleName}
           value={name}
-          //   maxlength="50"
-          //   enterkeyhint="next"
         />
         <input
           type="text"
