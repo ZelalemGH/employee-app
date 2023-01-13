@@ -1,10 +1,14 @@
 import './App.css'
-import EmployeePage from './Components/EmployeePage'
-import HomePage from './Components/HomePage'
-import Wrapper from './Components/Wrapper'
+// import EmployeePage from './Components/EmployeePage'
+// import HomePage from './Components/HomePage'
+// import Wrapper from './Components/Wrapper'
 import { useState, useEffect } from 'react'
 import imageOne from './assets/images/image_One.jpg'
 import Form from './Components/Form'
+import Home from './Components/Home'
+import Employees from './Components/Employees'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NavBar from './Components/NavBar'
 
 function App() {
   // Declare a new state variable, which we'll call "employees"
@@ -18,7 +22,6 @@ function App() {
       })
   }, [])
 
-  // Declare a new state variable, which we'll call "employeeDetail"
   const [employeeDetail, setEmployeeDetail] = useState({
     id: 1,
     image: imageOne,
@@ -29,15 +32,27 @@ function App() {
     sms: '222333444',
     email: 'solo@test.com',
   })
-  console.log('employeeDetail', employeeDetail)
+  // console.log('employeeDetail', employeeDetail)
   return (
-    <div className="App">
-      <Form />
-      <Wrapper>
-        <HomePage setEmployeeDetail={setEmployeeDetail} employees={employees} />
-        <EmployeePage employeeDetail={employeeDetail} employees={employees} />
-      </Wrapper>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/add-Employees" element={<Form />} />
+          <Route
+            path="/employees-list"
+            element={
+              <Employees
+                setEmployeeDetail={setEmployeeDetail}
+                employeeDetail={employeeDetail}
+                employees={employees}
+              />
+            }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 

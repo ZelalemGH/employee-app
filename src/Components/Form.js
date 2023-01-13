@@ -2,98 +2,119 @@ import React from 'react'
 import { useState } from 'react'
 
 const Form = () => {
-  //Inside the `Form` component create two states called `name` and `occupation`
-  const [image, setImage] = useState('')
-  const [name, setName] = useState('')
-  const [occupation, setOccupation] = useState('')
-  const [callOffice, setCallOffice] = useState('')
-  const [callMobile, setCallMobile] = useState('')
-  const [sms, setSms] = useState('')
-  const [email, setEmail] = useState('')
+  const [employeesData, setEmployeesData] = useState({
+    name: '',
+    image: '',
+    occupation: '',
+    callOffice: '',
+    callMobile: '',
+    sms: '',
+    email: '',
+  })
 
-  const handleImage = (event) => {
-    console.log(event.target.value)
-    setImage(event.target.value)
+  function handleChange(event) {
+    const updatedUserData = {
+      ...employeesData,
+      [event.target.name]: event.target.value,
+    }
+    setEmployeesData(updatedUserData)
   }
 
-  const handleName = (event) => {
-    console.log(event.target.value)
-    setName(event.target.value)
-  }
-
-  const handleOccupation = (event) => {
-    console.log(event.target.value)
-    setOccupation(event.target.value)
-  }
-
-  const handleCallOffice = (event) => {
-    console.log(event.target.value)
-    setCallOffice(event.target.value)
-  }
-
-  const handleCallMobile = (event) => {
-    console.log(event.target.value)
-    setCallMobile(event.target.value)
-  }
-
-  const handleSms = (event) => {
-    console.log(event.target.value)
-    setSms(event.target.value)
-  }
-
-  const handleEmail = (event) => {
-    console.log(event.target.value)
-    setEmail(event.target.value)
+  function handleSubmit(event) {
+    event.preventDefault()
+    fetch(`https://lit-dusk-21328.herokuapp.com/api/employees/allemployees`, {
+      method: 'POST',
+      body: JSON.stringify(employeesData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
   }
 
   return (
     <div>
-      <form className="wrapper">
-        <p className="StyledPara">
-          <strong>Add employee</strong>
-        </p>
+      <h1 style={{ textAlign: 'center' }}>Add Employee</h1>
+      <form style={styledForm} onSubmit={handleSubmit}>
         <input
-          type="text"
-          placeholder="url"
-          onChange={handleImage}
-          value={image}
-        />
-        <input
+          style={styledInput}
           type="text"
           placeholder="name"
-          onChange={handleName}
-          value={name}
+          name="name"
+          onChange={handleChange}
         />
         <input
+          style={styledInput}
+          type="text"
+          placeholder="image url"
+          name="image"
+          onChange={handleChange}
+        />
+        <input
+          style={styledInput}
           type="text"
           placeholder="occupation"
-          onChange={handleOccupation}
-          value={occupation}
+          name="occupation"
+          onChange={handleChange}
         />
         <input
+          style={styledInput}
           type="text"
           placeholder="callOffice"
-          onChange={handleCallOffice}
-          value={callOffice}
+          name="callOffice"
+          onChange={handleChange}
         />
         <input
+          style={styledInput}
           type="text"
           placeholder="callMobile"
-          onChange={handleCallMobile}
-          value={callMobile}
+          name="callMobile"
+          onChange={handleChange}
         />
-        <input type="text" placeholder="sms" onChange={handleSms} value={sms} />
         <input
+          style={styledInput}
+          type="text"
+          placeholder="sms"
+          name="sms"
+          onChange={handleChange}
+        />
+        <input
+          style={styledInput}
           type="text"
           placeholder="email"
-          onChange={handleEmail}
-          value={email}
+          name="email"
+          onChange={handleChange}
         />
-        <button type="button" class="btn btn-dark">
+        <button style={styledButton} type="button">
           Submit
         </button>
       </form>
     </div>
   )
 }
+
+const styledInput = {
+  borderRadius: '5px',
+  fontSize: '1rem',
+  padding: '0.25rem 1rem',
+}
+
+const styledButton = {
+  border: 'none',
+  borderRadius: '8px',
+  color: '#fff',
+  padding: '0.5rem 1rem',
+  backgroundColor: '#333',
+  fontSize: '1.5rem',
+}
+
+const styledForm = {
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '3px 2px',
+  margin: '20px auto',
+  rowGap: '15px',
+  justifyContent: 'center',
+  width: '40%',
+}
+
 export default Form
