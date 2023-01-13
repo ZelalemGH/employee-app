@@ -7,7 +7,7 @@ function NavBar() {
       <h3>Employees</h3>
       <ul style={styledUl}>
         <li style={{ cursor: 'pointer' }}>
-          <Link to="/Home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li style={{ cursor: 'pointer' }}>
           <Link to="/Add-employees">Add Employees</Link>
