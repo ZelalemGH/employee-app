@@ -14,10 +14,37 @@ function Home() {
         and its southernmost pit is known locally as "the gateway to Hell".
       </p>
       <div>
-        <div>Login</div>
-        <div>Register</div>
+        <div>
+          <button style={styledLogin} type="submit">
+            Login
+          </button>
+        </div>
+        <div>
+          <button style={styledRegister} type="submit">
+            Register
+          </button>
+        </div>
       </div>
     </div>
   )
 }
+
+const styledLogin = {
+  display: 'flex',
+  marginTop: '20px',
+  margin: '5px',
+  padding: '5px',
+  cursor: 'pointer',
+  // justifyContent: 'spaceBetween',
+}
+
+const styledRegister = {
+  display: 'flex',
+  marginTop: '20px',
+  margin: '5px',
+  padding: '5px',
+  cursor: 'pointer',
+  // justifyContent: 'spaceBetween',
+}
+
 export default Home

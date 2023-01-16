@@ -1,7 +1,4 @@
 import './App.css'
-// import EmployeePage from './Components/EmployeePage'
-// import HomePage from './Components/HomePage'
-// import Wrapper from './Components/Wrapper'
 import { useState, useEffect } from 'react'
 import imageOne from './assets/images/image_One.jpg'
 import Form from './Components/Form'
@@ -27,9 +24,9 @@ function App() {
     image: imageOne,
     name: 'John Doe',
     occupation: 'Front end dev',
-    callOffice: '1234567',
-    callMobile: '235690',
-    sms: '222333444',
+    callOffice: 1234567,
+    callMobile: 235690,
+    sms: 222333444,
     email: 'solo@test.com',
   })
   // console.log('employeeDetail', employeeDetail)

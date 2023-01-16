@@ -1,7 +1,7 @@
 {
   "name": "employee-app",
   "version": "0.1.0",
-  "homepage": "https://ZelalemGH.github.io/employee-app",
+  "homepage": "https://ZelalemGH.github.io",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

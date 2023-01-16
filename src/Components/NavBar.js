@@ -24,7 +24,7 @@ const styledNavBar = {
   width: '100%',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'space-around',
   height: '10vh',
   backgroundColor: '#00BCD4',
   color: '#fff',
