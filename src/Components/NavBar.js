@@ -7,13 +7,25 @@ function NavBar() {
       <h3>Employees</h3>
       <ul style={styledUl}>
         <li style={{ cursor: 'pointer' }}>
-          <Link to="/">Home</Link>
+          <Link style={{ textDecoration: 'none', color: '#f4f4f4' }} to="/">
+            Home
+          </Link>
         </li>
         <li style={{ cursor: 'pointer' }}>
-          <Link to="/Add-employees">Add Employees</Link>
+          <Link
+            style={{ textDecoration: 'none', color: '#f4f4f4' }}
+            to="/Add-employees"
+          >
+            Add Employees
+          </Link>
         </li>
         <li style={{ cursor: 'pointer' }}>
-          <Link to="/Employees-list">Employees List</Link>
+          <Link
+            style={{ textDecoration: 'none', color: '#f4f4f4' }}
+            to="/Employees-list"
+          >
+            Employees List
+          </Link>
         </li>
       </ul>
     </div>
@@ -21,7 +33,6 @@ function NavBar() {
 }
 
 const styledNavBar = {
-  width: '100%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-around',

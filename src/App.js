@@ -1,6 +1,5 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-import imageOne from './assets/images/image_One.jpg'
 import Form from './Components/Form'
 import Home from './Components/Home'
 import Employees from './Components/Employees'
@@ -10,26 +9,25 @@ import NavBar from './Components/NavBar'
 function App() {
   // Declare a new state variable, which we'll call "employees"
   const [employees, setEmployees] = useState([0])
+  const [employeeDetail, setEmployeeDetail] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
+  const [isError, setIsError] = useState(false)
+
+  console.log('isLoading', isLoading)
   useEffect(() => {
     fetch(`https://lit-dusk-21328.herokuapp.com/api/employees/allemployees`)
       .then((res) => res.json()) // getting the response in a json format
       .then((data) => {
         console.log(data)
         setEmployees(data) // to update the value of employees and getting the data itself
+        setEmployeeDetail(data[0])
+        setIsLoading(false)
+      })
+      .catch((err) => {
+        setIsError(true)
       })
   }, [])
 
-  const [employeeDetail, setEmployeeDetail] = useState({
-    id: 1,
-    image: imageOne,
-    name: 'John Doe',
-    occupation: 'Front end dev',
-    callOffice: 1234567,
-    callMobile: 235690,
-    sms: 222333444,
-    email: 'solo@test.com',
-  })
-  // console.log('employeeDetail', employeeDetail)
   return (
     <BrowserRouter>
       <NavBar />
@@ -44,6 +42,8 @@ function App() {
                 setEmployeeDetail={setEmployeeDetail}
                 employeeDetail={employeeDetail}
                 employees={employees}
+                isLoading={isLoading}
+                isError={isError}
               />
             }
           />

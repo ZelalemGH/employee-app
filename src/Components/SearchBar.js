@@ -5,7 +5,6 @@ const SearchBar = () => {
   return (
     <div>
       <input style={StyledSearchBar} type="text" placeholder="Search" />
-      {/* <p>The employee name is {employeeName}</p> */}
     </div>
   )
 }
