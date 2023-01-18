@@ -1,11 +1,6 @@
 import EmployeeListItem from './EmployeeListItem'
 
 const EmployeeList = (props) => {
-  // return (
-  //   <div>
-  //     <EmployeeListItem employees={props.employees} />
-  //   </div>
-  // )
   console.log('check employee', props)
   if (props.employees) {
     return props.employees.map(({ image, name, occupation }, index) => {

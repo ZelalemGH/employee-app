@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '@mui/material'
 
 function Home() {
   return (
@@ -14,26 +15,25 @@ function Home() {
         and its southernmost pit is known locally as "the gateway to Hell".
       </p>
       <div>
-        <div>
-          <button style={styleButton}>Login</button>
-        </div>
-        <div>
-          <button style={styleButton}>Register</button>
-        </div>
+        <Button variant="contained" style={{ margin: '2rem' }}>
+          Login
+        </Button>
+        <Button variant="contained">Register</Button>
       </div>
     </div>
   )
 }
 
-const styleButton = {
-  backgroundColor: '#2196F3',
-  width: '100px',
-  marginBottom: '10px',
-  marginLeft: '10px',
-  textAlign: 'center',
-  padding: '3px 0',
-  borderRadius: '4px',
-  color: '#fff',
-}
+// const styleButton = {
+//   backgroundColor: '#2196F3',
+//   width: '100px',
+//   marginBottom: '10px',
+//   marginLeft: '10px',
+//   textAlign: 'center',
+//   padding: '3px 0',
+//   borderRadius: '4px',
+//   color: '#fff',
+//   cursor: 'pointer',
+// }
 
 export default Home

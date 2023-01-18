@@ -9,6 +9,8 @@ const EmployeePage = (props) => {
       <EmployeeDetail
         employees={props.employees}
         employeeDetail={props.employeeDetail}
+        isLoading={props.isLoading}
+        isError={props.isError}
       />
     </div>
   )

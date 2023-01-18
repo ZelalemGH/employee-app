@@ -33,7 +33,7 @@ function App() {
       <NavBar />
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/employee-app" element={<Home />} />
           <Route path="/add-Employees" element={<Form />} />
           <Route
             path="/employees-list"

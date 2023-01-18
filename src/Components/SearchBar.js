@@ -4,7 +4,11 @@ const SearchBar = () => {
   // const [employeeName, setEmployeeName] = useState('')
   return (
     <div>
-      <input style={StyledSearchBar} type="text" placeholder="Search" />
+      <input
+        style={StyledSearchBar}
+        type="text"
+        placeholder="Please add the employee name"
+      />
     </div>
   )
 }

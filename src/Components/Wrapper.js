@@ -3,12 +3,11 @@ const Wrapper = (props) => {
 }
 
 const StyledWrapper = {
-  maxWidth: '1000px',
+  maxWidth: '800px',
   margin: '0 auto',
   backgroundColor: '#fff',
   display: 'flex',
   gap: '10px',
-  paddingTop: '20px',
 }
 
 export default Wrapper
