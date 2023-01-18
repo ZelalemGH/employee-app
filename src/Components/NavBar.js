@@ -10,7 +10,7 @@ import Button from '@mui/material/Button'
 
 function NavBar() {
   const navItems = [
-    { item: 'Home', to: '/' },
+    { item: 'Home', to: '/employee-app' },
     { item: 'Add-Employees', to: '/add-employees' },
     { item: 'EmployeesList', to: '/employees-list' },
   ]
