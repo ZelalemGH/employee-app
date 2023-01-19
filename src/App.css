@@ -11,15 +11,18 @@
 .zee-form-container, .login-form, .register-form{
   display: flex;
   flex-direction:column;
+  
 }
 
 @media screen and (min-width: 600px) {
 
 }.zee-form-container{
-  padding: 5rem;
+  padding: 2rem;
   border: 1px solid white;
   border-radius: 10px;
-  margin: 0.5rem;
+  margin: 4rem;
+  box-shadow: #bdbdbd;
+  
 }
 
 label {

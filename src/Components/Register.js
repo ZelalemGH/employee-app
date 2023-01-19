@@ -16,7 +16,7 @@ export const Register = (props) => {
 
   return (
     <div className="zee-form-container">
-      <h2>Register</h2>
+      <h2 style={{ textAlign: 'Center' }}>Register</h2>
       <form className="register-form" onSubmit={handleSubmit}>
         <label htmlfor="name">Full Name</label>
         <input

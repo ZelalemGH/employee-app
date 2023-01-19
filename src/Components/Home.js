@@ -12,8 +12,10 @@ function Home(props) {
   console.log(currentForm)
   return (
     <div style={{ margin: '0 auto' }}>
-      <h1>Welcome to the Employees Home Page</h1>
-      <p>
+      <h1 style={{ textAlign: 'Center', padding: '10px' }}>
+        Welcome to the Employees Home Page
+      </h1>
+      <p style={{ margin: '30px' }}>
         Erta Ale is 613 metres (2,011 ft) high, with one or sometimes two active
         lava lakes at the summit which occasionally overflow on the south side
         of the volcano.[1] It is notable for holding the longest-existing lava

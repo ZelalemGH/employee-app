@@ -26,7 +26,7 @@ export const Login = (props) => {
 
   return (
     <div className="zee-form-container">
-      <h2>Login</h2>
+      <h2 style={{ textAlign: 'Center' }}>Login</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         <label for="email">email</label>
         <input
@@ -49,7 +49,7 @@ export const Login = (props) => {
         </Button>
       </form>
       <button className="link-btn" onClick={() => props.toggleForm('register')}>
-        Don't have an account Register here.
+        Don't have an account? Register here.
       </button>
     </div>
   )
