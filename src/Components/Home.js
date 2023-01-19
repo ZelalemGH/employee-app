@@ -1,7 +1,15 @@
 import React from 'react'
-import { Button } from '@mui/material'
+import { Login } from './Login'
+import { Register } from './Register'
+import { useState } from 'react'
 
-function Home() {
+function Home(props) {
+  const [currentForm, setCurrentForm] = useState('Login')
+
+  const toggleForm = (formName) => {
+    setCurrentForm(formName)
+  }
+  console.log(currentForm)
   return (
     <div style={{ margin: '0 auto' }}>
       <h1>Welcome to the Employees Home Page</h1>
@@ -14,12 +22,11 @@ function Home() {
         world.[4] Erta Ale means "smoking mountain" in the local Afar language
         and its southernmost pit is known locally as "the gateway to Hell".
       </p>
-      <div>
-        <Button variant="contained" style={{ margin: '2rem' }}>
-          Login
-        </Button>
-        <Button variant="contained">Register</Button>
-      </div>
+      {currentForm === 'Login' ? (
+        <Login setIsLoggedIn={props.setIsLoggedIn} toggleForm={toggleForm} />
+      ) : (
+        <Register toggleForm={toggleForm} />
+      )}
     </div>
   )
 }

@@ -13,6 +13,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
   console.log('isLoading', isLoading)
   useEffect(() => {
     fetch(`https://lit-dusk-21328.herokuapp.com/api/employees/allemployees`)
@@ -30,11 +32,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn} />
       <div className="App">
         <Routes>
-          <Route path="/employee-app" element={<Home />} />
+          <Route
+            path="/employee-app"
+            element={<Home setIsLoggedIn={setIsLoggedIn} />}
+          />
           <Route path="/add-Employees" element={<Form />} />
+
           <Route
             path="/employees-list"
             element={

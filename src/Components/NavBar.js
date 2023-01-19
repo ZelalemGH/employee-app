@@ -8,7 +8,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
-function NavBar() {
+function NavBar(props) {
   const navItems = [
     { item: 'Home', to: '/employee-app' },
     { item: 'Add-Employees', to: '/add-employees' },
@@ -34,13 +34,19 @@ function NavBar() {
             Employees
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Link to={item.to} style={{ textDecoration: 'none' }}>
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item.item}
-                </Button>
+            {!props.isLoggedIn ? (
+              <Link to="/employee-app">
+                <Button sx={{ color: '#fff' }}>Home</Button>
               </Link>
-            ))}
+            ) : (
+              navItems.map((item) => (
+                <Link to={item.to} style={{ textDecoration: 'none' }}>
+                  <Button key={item} sx={{ color: '#fff' }}>
+                    {item.item}
+                  </Button>
+                </Link>
+              ))
+            )}
           </Box>
         </Toolbar>
       </AppBar>
