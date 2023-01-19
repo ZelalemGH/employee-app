@@ -3,7 +3,6 @@ import Header from './Header'
 import SearchBar from './SearchBar'
 
 const HomePage = ({ employees, setEmployeeDetail }) => {
-  // console.log()
   return (
     <div style={StyledHomePage}>
       <div style={StyledHeaderContent}>

@@ -1,7 +1,6 @@
 import React from 'react'
 import Skeleton from '@mui/material/Skeleton'
 import Stack from '@mui/material/Stack'
-// import styled from 'styled-components'
 
 const EmployeeListItem = ({ image, name, occupation, onClick, isLoading }) => {
   if (isLoading) {

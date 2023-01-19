@@ -33,16 +33,4 @@ function Home(props) {
   )
 }
 
-// const styleButton = {
-//   backgroundColor: '#2196F3',
-//   width: '100px',
-//   marginBottom: '10px',
-//   marginLeft: '10px',
-//   textAlign: 'center',
-//   padding: '3px 0',
-//   borderRadius: '4px',
-//   color: '#fff',
-//   cursor: 'pointer',
-// }
-
 export default Home

@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './Components/NavBar'
 
 function App() {
-  // Declare a new state variable, which we'll call "employees"
   const [employees, setEmployees] = useState([0])
   const [employeeDetail, setEmployeeDetail] = useState({})
   const [isLoading, setIsLoading] = useState(true)
