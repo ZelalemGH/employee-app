@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/employee-app/static/css/main.79b1cb21.css",
-    "main.js": "/employee-app/static/js/main.7f50bdc3.js",
+    "main.css": "/employee-app/static/css/main.f26ed9a1.css",
+    "main.js": "/employee-app/static/js/main.c886c251.js",
+    "static/media/surface.jpg": "/employee-app/static/media/surface.289013b6b751b2c5e2e5.jpg",
+    "static/media/mountains-.jpg": "/employee-app/static/media/mountains-.c70e2d2e804234691f47.jpg",
     "index.html": "/employee-app/index.html",
-    "main.79b1cb21.css.map": "/employee-app/static/css/main.79b1cb21.css.map",
-    "main.7f50bdc3.js.map": "/employee-app/static/js/main.7f50bdc3.js.map"
+    "main.f26ed9a1.css.map": "/employee-app/static/css/main.f26ed9a1.css.map",
+    "main.c886c251.js.map": "/employee-app/static/js/main.c886c251.js.map"
   },
   "entrypoints": [
-    "static/css/main.79b1cb21.css",
-    "static/js/main.7f50bdc3.js"
+    "static/css/main.f26ed9a1.css",
+    "static/js/main.c886c251.js"
   ]
 }
