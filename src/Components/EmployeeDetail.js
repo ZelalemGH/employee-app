@@ -2,28 +2,26 @@ import React from 'react'
 import Skeleton from '@mui/material/Skeleton'
 import Stack from '@mui/material/Stack'
 import styled from 'styled-components'
+import { Paper } from '@mui/material'
 
 const EmployeeDetail = ({ employeeDetail, isLoading }) => {
-  const StyledEmployeeDetail = styled.div`
+  const StyledPaper = styled(Paper)`
+    padding: 1rem;
+    margin-right: 0.5rem;
+  `
+  const StyledEmployeeDetail = styled(Paper)`
     display: flex;
-    gap: 15px;
-    margin: 5px;
-    border-bottom: 2px solid #f4f4f4;
+    gap: 10px;
     padding: 10px 0;
     align-items: center;
+    margin-right: 0.5rem;
   `
   const Image = styled.img`
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
+    margin-left: 1rem;
   `
-
-  const StyledUl = styled.ul`
-    border-bottom: 2px solid #f4f4f4;
-    padding: 5px;
-    list-style: none;
-  `
-
   if (isLoading) {
     return (
       <Stack spacing={1}>
@@ -39,7 +37,7 @@ const EmployeeDetail = ({ employeeDetail, isLoading }) => {
     )
   }
   return (
-    <div>
+    <>
       <StyledEmployeeDetail>
         <Image src={employeeDetail.image} alt={employeeDetail.image} />
         <div>
@@ -47,31 +45,23 @@ const EmployeeDetail = ({ employeeDetail, isLoading }) => {
           <p>{employeeDetail.occupation}</p>
         </div>
       </StyledEmployeeDetail>
-      <StyledUl>
-        <li>
-          <h3>Call Office</h3>
-          <p>{employeeDetail.callOffice}</p>
-        </li>
-      </StyledUl>
-      <StyledUl>
-        <li>
-          <h3>Call Mobile</h3>
-          <p>{employeeDetail.callMobile}</p>
-        </li>
-      </StyledUl>
-      <StyledUl>
-        <li>
-          <h3>SMS</h3>
-          <p>{employeeDetail.sms}</p>
-        </li>
-      </StyledUl>
-      <StyledUl>
-        <li>
-          <h3>Email</h3>
-          <p>{employeeDetail.email}</p>
-        </li>
-      </StyledUl>
-    </div>
+      <StyledPaper variant="outlined">
+        <h3>Call Office</h3>
+        <p>{employeeDetail.callOffice}</p>
+      </StyledPaper>
+      <StyledPaper variant="outlined">
+        <h3>Call Mobile</h3>
+        <p>{employeeDetail.callMobile}</p>
+      </StyledPaper>
+      <StyledPaper variant="outlined">
+        <h3>SMS</h3>
+        <p>{employeeDetail.sms}</p>
+      </StyledPaper>
+      <StyledPaper variant="outlined">
+        <h3>Email</h3>
+        <p>{employeeDetail.email}</p>
+      </StyledPaper>
+    </>
   )
 }
 

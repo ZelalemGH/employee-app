@@ -1,38 +1,22 @@
 import React from 'react'
-import Skeleton from '@mui/material/Skeleton'
-import Stack from '@mui/material/Stack'
+import { Paper } from '@mui/material'
+import styled from 'styled-components'
 
-const EmployeeListItem = ({ image, name, occupation, onClick, isLoading }) => {
-  if (isLoading) {
-    return (
-      <Stack spacing={1}>
-        {/* For variant="text", adjust the height via font-size */}
-        <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-        {/* For other variants, adjust the size with `width` and `height` */}
-        <Skeleton variant="circular" width={80} height={80} />
-        <Skeleton variant="rectangular" width={400} height={70} />
-        <Skeleton variant="circular" width={80} height={80} />
-        <Skeleton variant="rectangular" width={400} height={70} />
-        <Skeleton variant="circular" width={80} height={80} />
-        <Skeleton variant="rectangular" width={400} height={70} />
-        <Skeleton variant="circular" width={80} height={80} />
-        <Skeleton variant="rectangular" width={400} height={70} />
-        <Skeleton variant="circular" width={80} height={80} />
-        <Skeleton variant="rectangular" width={400} height={70} />
-        <Skeleton variant="circular" width={80} height={80} />
-        <Skeleton variant="rectangular" width={400} height={70} />
-      </Stack>
-    )
-  }
-
+const EmployeeListItem = ({ image, name, occupation, onClick }) => {
+  const StyledCard = styled(Paper)`
+    padding: 0.5rem 0.25rem;
+    margin: 0.5rem;
+  `
   return (
-    <div style={StyledEmployeeListItem} onClick={onClick}>
-      <img style={StyledImage} src={image} alt={image} />
-      <div>
-        <h3 style={{ margin: '0' }}>{name}</h3>
-        <p style={{ margin: '0' }}>{occupation}</p>
+    <StyledCard elevation={3}>
+      <div style={StyledEmployeeListItem} onClick={onClick}>
+        <img style={StyledImage} src={image} alt={image} />
+        <div>
+          <h3 style={{ margin: '0' }}>{name}</h3>
+          <p style={{ margin: '0' }}>{occupation}</p>
+        </div>
       </div>
-    </div>
+    </StyledCard>
   )
 }
 
@@ -47,8 +31,7 @@ const StyledEmployeeListItem = {
   gap: '10px',
   margin: '8px',
   padding: '5px',
-  backgroundColor: '#f4f4f4',
-  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
+  // boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
   alignItems: 'center',
   cursor: 'pointer',
 }

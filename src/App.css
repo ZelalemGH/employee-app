@@ -3,9 +3,13 @@
  }
  
  .App {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 6rem auto; 
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
+  height: 100vh;
+  position: relative;
+  background-image: url(assets/images/mountains-.jpg);
+  
 }
 
 .zee-form-container, .login-form, .register-form{
@@ -21,8 +25,7 @@
   border: 1px solid white;
   border-radius: 10px;
   margin: 4rem;
-  box-shadow: #bdbdbd;
-  
+  background-image: url(assets/images/surface.jpg);
 }
 
 label {
