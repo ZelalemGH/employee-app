@@ -19,4 +19,5 @@ const EmployeePage = (props) => {
 const StyledHomePage = {
   width: '50%',
 }
+
 export default EmployeePage

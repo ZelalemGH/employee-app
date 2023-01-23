@@ -13,7 +13,7 @@ export default function Header(props) {
 const StyledHeader = {
   display: 'flex',
   justifyContent: 'space-between',
-  backgroundColor: '#fff',
+  // backgroundColor: '#fff',
   width: '50%',
   padding: '0 7px',
   margin: '2px 2px',

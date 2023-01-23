@@ -5,11 +5,10 @@
  .App {
   max-width: 900px;
   margin: 6rem auto; 
-  /* background-color: #f4f4f4; */
-  height: 100vh;
+  background-color: #f4f4f4;
+  height: 75vh;
   position: relative;
-  background-image: url(assets/images/mountains-.jpg);
-  
+  /* background-image: url(assets/images/mountains-.jpg); */
 }
 
 .zee-form-container, .login-form, .register-form{
@@ -24,7 +23,7 @@
   padding: 2rem;
   border: 1px solid white;
   border-radius: 10px;
-  margin: 4rem;
+  margin: 2rem;
   background-image: url(assets/images/surface.jpg);
 }
 

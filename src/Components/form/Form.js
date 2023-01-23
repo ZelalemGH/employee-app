@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { StyledInput, StyledForm, StyledButton } from './StyledComponents'
 
 const Form = () => {
   const [employeesData, setEmployeesData] = useState({
@@ -34,87 +35,62 @@ const Form = () => {
   return (
     <div>
       <h1 style={{ textAlign: 'center' }}>Add Employee</h1>
-      <form style={styledForm} onSubmit={handleSubmit}>
+      <form style={StyledForm} onSubmit={handleSubmit}>
         <input
-          style={styledInput}
+          style={StyledInput}
           type="text"
           placeholder="name"
           name="name"
           onChange={handleChange}
         />
         <input
-          style={styledInput}
+          style={StyledInput}
           type="text"
           placeholder="image url"
           name="image"
           onChange={handleChange}
         />
         <input
-          style={styledInput}
+          style={StyledInput}
           type="text"
           placeholder="occupation"
           name="occupation"
           onChange={handleChange}
         />
         <input
-          style={styledInput}
+          style={StyledInput}
           type="text"
           placeholder="callOffice"
           name="callOffice"
           onChange={handleChange}
         />
         <input
-          style={styledInput}
+          style={StyledInput}
           type="text"
           placeholder="callMobile"
           name="callMobile"
           onChange={handleChange}
         />
         <input
-          style={styledInput}
+          style={StyledInput}
           type="text"
           placeholder="sms"
           name="sms"
           onChange={handleChange}
         />
         <input
-          style={styledInput}
+          style={StyledInput}
           type="text"
           placeholder="email"
           name="email"
           onChange={handleChange}
         />
-        <button style={styledButton} type="button">
+        <button style={StyledButton} type="button">
           Submit
         </button>
       </form>
     </div>
   )
-}
-
-const styledInput = {
-  borderRadius: '5px',
-  fontSize: '1rem',
-  padding: '0.25rem 1rem',
-}
-
-const styledButton = {
-  border: 'none',
-  borderRadius: '8px',
-  color: '#fff',
-  padding: '0.5rem 1rem',
-  backgroundColor: '#333',
-  fontSize: '1.5rem',
-}
-
-const styledForm = {
-  display: 'flex',
-  flexDirection: 'column',
-  padding: '3px 2px',
-  margin: '20px auto',
-  rowGap: '15px',
-  justifyContent: 'center',
-  width: '40%',
 }
 
 export default Form

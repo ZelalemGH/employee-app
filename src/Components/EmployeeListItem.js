@@ -21,18 +21,15 @@ const EmployeeListItem = ({ image, name, occupation, onClick }) => {
 }
 
 const StyledImage = {
-  width: '55px',
-  height: '55px',
+  width: '50px',
+  height: '50px',
   borderRadius: '50%',
 }
 
 const StyledEmployeeListItem = {
   display: 'flex',
   gap: '10px',
-  margin: '8px',
-  padding: '5px',
-  // boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
-  alignItems: 'center',
+  margin: '5px',
   cursor: 'pointer',
 }
 

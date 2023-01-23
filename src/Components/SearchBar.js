@@ -1,7 +1,4 @@
-// import { useState } from 'react'
-
 const SearchBar = () => {
-  // const [employeeName, setEmployeeName] = useState('')
   return (
     <div>
       <input
@@ -14,10 +11,9 @@ const SearchBar = () => {
 }
 
 const StyledSearchBar = {
-  width: '97%',
+  width: '95%',
   borderRadius: '5px',
   border: '1px solid #333',
-  textAlign: 'center',
   padding: '7px 2px',
   margin: '2px 5px',
 }
