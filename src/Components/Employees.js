@@ -1,16 +1,12 @@
-import React from 'react'
 import EmployeePage from './EmployeePage'
 import HomePage from './HomePage'
 import Wrapper from './Wrapper'
 import { Alert, AlertTitle } from '@mui/material'
+import { useContext } from 'react'
+import { EmployeesContext } from '../EmployeesContext'
 
-function employees({
-  setEmployeeDetail,
-  employees,
-  employeeDetail,
-  isLoading,
-  isError,
-}) {
+function Employees() {
+  const { isError } = useContext(EmployeesContext)
   return isError ? (
     <Alert severity="error">
       <AlertTitle>Error</AlertTitle>
@@ -19,15 +15,11 @@ function employees({
   ) : (
     <div>
       <Wrapper>
-        <HomePage setEmployeeDetail={setEmployeeDetail} employees={employees} />
-        <EmployeePage
-          employeeDetail={employeeDetail}
-          employees={employees}
-          isLoading={isLoading}
-        />
+        <HomePage />
+        <EmployeePage />
       </Wrapper>
     </div>
   )
 }
 
-export default employees
+export default Employees

@@ -1,11 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function Header(props) {
+export default function Header({ title, icon }) {
   return (
     <div style={StyledHeader}>
-      <FontAwesomeIcon size="2x" icon={props.icon} color="#333" />
-      <h3>{props.title}</h3>
+      <FontAwesomeIcon size="2x" icon={icon} color="#333" />
+      <h3>{title}</h3>
     </div>
   )
 }

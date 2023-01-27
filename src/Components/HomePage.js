@@ -2,17 +2,14 @@ import EmployeeList from './EmployeeList'
 import Header from './Header'
 import SearchBar from './SearchBar'
 
-const HomePage = ({ employees, setEmployeeDetail }) => {
+const HomePage = () => {
   return (
     <div style={StyledHomePage}>
       <div style={StyledHeaderContent}>
         <Header title="Employee Directory" />
       </div>
       <SearchBar />
-      <EmployeeList
-        employees={employees}
-        setEmployeeDetail={setEmployeeDetail}
-      />
+      <EmployeeList />
     </div>
   )
 }

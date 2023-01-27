@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -7,13 +7,15 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import { EmployeesContext } from '../EmployeesContext'
 
-function NavBar(props) {
+function NavBar() {
   const navItems = [
     { item: 'Home', to: '/employee-app' },
     { item: 'Add-Employees', to: '/add-employees' },
     { item: 'EmployeesList', to: '/employees-list' },
   ]
+  const { isLoggedIn } = useContext(EmployeesContext)
   return (
     <div>
       <AppBar sx={{ height: '8%', backgroundColor: '#2196F3' }}>
@@ -34,7 +36,7 @@ function NavBar(props) {
             Employees
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {!props.isLoggedIn ? (
+            {!isLoggedIn ? (
               <Link to="/employee-app">
                 <Button sx={{ color: '#fff' }}>Home</Button>
               </Link>
