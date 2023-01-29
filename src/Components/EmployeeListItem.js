@@ -2,6 +2,8 @@ import { useContext } from 'react'
 import { Paper } from '@mui/material'
 import styled from 'styled-components'
 import { EmployeesContext } from '../EmployeesContext'
+import Skeleton from '@mui/material/Skeleton'
+import Stack from '@mui/material/Stack'
 
 const StyledCard = styled(Paper)`
   padding: 0.5rem 0.25rem;
@@ -9,6 +11,22 @@ const StyledCard = styled(Paper)`
 `
 const EmployeeListItem = () => {
   const { employees, setEmployeeDetail } = useContext(EmployeesContext)
+  const { isLoading } = useContext(EmployeesContext)
+  if (isLoading) {
+    return (
+      <Stack spacing={1}>
+        {/* For variant="text", adjust the height via font-size */}
+
+        <Skeleton variant="circular" width={80} height={80} />
+        <Skeleton variant="circular" width={80} height={80} />
+        <Skeleton variant="circular" width={80} height={80} />
+        <Skeleton variant="circular" width={80} height={80} />
+        <Skeleton variant="circular" width={80} height={80} />
+        <Skeleton variant="circular" width={80} height={80} />
+        <Skeleton variant="circular" width={80} height={80} />
+      </Stack>
+    )
+  }
   return (
     employees &&
     employees?.map(({ image, name, occupation }, index) => {
