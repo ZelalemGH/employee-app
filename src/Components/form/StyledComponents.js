@@ -1,7 +1,14 @@
+export const StyledForm = {
+  display: 'flex',
+  flexDirection: 'column',
+  margin: '0 auto',
+  width: '40%',
+}
+
 export const StyledInput = {
-  size: '10',
   padding: '10px 5px',
-  border: '1px solid #333',
+  margin: '5px',
+  size: '10',
   borderRadius: '5px',
   '&:focus': {
     outline: 'none',
@@ -21,13 +28,4 @@ export const StyledButton = {
     color: '#fff',
   },
   cursor: 'pointer',
-}
-
-export const StyledForm = {
-  display: 'flex',
-  flexDirection: 'column',
-  padding: '3px 2px',
-  margin: '0 auto',
-  rowGap: '10px',
-  width: '40%',
 }

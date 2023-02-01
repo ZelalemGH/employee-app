@@ -10,8 +10,16 @@ const StyledWrapper = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-`
 
+  @media (max-width: 599px) {
+    margin-top: 4rem;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+    gap: 30px;
+    top: 82%;
+  }
+`
 const Wrapper = (props) => {
   return <StyledWrapper>{props.children}</StyledWrapper>
 }

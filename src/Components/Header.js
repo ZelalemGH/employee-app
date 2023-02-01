@@ -1,21 +1,24 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import styled from 'styled-components'
 
-export default function Header({ title, icon }) {
+const StyledHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 50%;
+  padding: 0 40px;
+  margin: 2px 2px;
+  text-align: center;
+  color: ${(props) => props.color};
+`
+const Header = ({ title, icon }) => {
   return (
-    <div style={StyledHeader}>
-      <FontAwesomeIcon size="2x" icon={icon} color="#333" />
+    <StyledHeader>
+      <FontAwesomeIcon size="2x" icon={icon} />
       <h3>{title}</h3>
-    </div>
+    </StyledHeader>
   )
 }
 
-const StyledHeader = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  // backgroundColor: '#fff',
-  width: '50%',
-  padding: '0 7px',
-  margin: '2px 2px',
-  textAlign: 'center',
-}
+export default Header

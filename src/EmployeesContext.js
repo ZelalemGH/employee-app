@@ -30,6 +30,7 @@ export function EmployeeProvider(props) {
       value={{
         employees,
         employeeDetail,
+        setEmployees,
         setEmployeeDetail,
         isLoading,
         isError,

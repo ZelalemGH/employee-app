@@ -1,5 +1,5 @@
 import './App.css'
-import Form from './Components/form/Form'
+import Form from './Components/form/AddEmployeesForm'
 import Home from './Components/Home'
 import Employees from './Components/Employees'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'

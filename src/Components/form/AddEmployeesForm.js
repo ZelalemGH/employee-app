@@ -1,7 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import { StyledInput, StyledForm, StyledButton } from './StyledComponents'
+import styled from 'styled-components'
 
+const StyledInputs = styled.input`
+  border-color: ${(props) => props.color || 'blue'};
+`
 const Form = () => {
   const [employeesData, setEmployeesData] = useState({
     name: '',
@@ -36,49 +40,51 @@ const Form = () => {
     <div>
       <h1 style={{ textAlign: 'center' }}>Add Employee</h1>
       <form style={StyledForm} onSubmit={handleSubmit}>
-        <input
+        <StyledInputs
           style={StyledInput}
           type="text"
           placeholder="name"
           name="name"
           onChange={handleChange}
+          color="#76ff03"
         />
-        <input
+        <StyledInputs
           style={StyledInput}
           type="text"
           placeholder="image url"
           name="image"
           onChange={handleChange}
         />
-        <input
+        <StyledInputs
           style={StyledInput}
           type="text"
           placeholder="occupation"
           name="occupation"
           onChange={handleChange}
+          color="red"
         />
-        <input
+        <StyledInputs
           style={StyledInput}
           type="text"
           placeholder="callOffice"
           name="callOffice"
           onChange={handleChange}
         />
-        <input
+        <StyledInputs
           style={StyledInput}
           type="text"
           placeholder="callMobile"
           name="callMobile"
           onChange={handleChange}
         />
-        <input
+        <StyledInputs
           style={StyledInput}
           type="text"
           placeholder="sms"
           name="sms"
           onChange={handleChange}
         />
-        <input
+        <StyledInputs
           style={StyledInput}
           type="text"
           placeholder="email"

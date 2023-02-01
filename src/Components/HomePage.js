@@ -1,25 +1,26 @@
 import EmployeeList from './EmployeeList'
 import Header from './Header'
 import SearchBar from './SearchBar'
+import styled from 'styled-components'
+
+const StyledHomePage = styled.div`
+  width: 50%;
+`
 
 const HomePage = () => {
   return (
-    <div style={StyledHomePage}>
+    <StyledHomePage>
       <div style={StyledHeaderContent}>
-        <Header title="Employee Directory" />
+        <Header title="Employee Directory" color="green" />
       </div>
       <SearchBar />
       <EmployeeList />
-    </div>
+    </StyledHomePage>
   )
-}
-
-const StyledHomePage = {
-  width: '50%',
 }
 
 const StyledHeaderContent = {
   width: '100%',
-  marginLeft: '150px',
+  marginLeft: '80px',
 }
 export default HomePage

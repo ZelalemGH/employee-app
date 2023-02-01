@@ -14,7 +14,7 @@
 .zee-form-container, .login-form, .register-form{
   display: flex;
   flex-direction:column;
-  
+    
 }
 
 @media screen and (min-width: 600px) {
@@ -32,7 +32,7 @@ label {
   padding: 0.25rem 0;
 }
 
-input {
+.user-input {
   margin: 0.5rem 0;
   padding: 1rem;
   border: none;
