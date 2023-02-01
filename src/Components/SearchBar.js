@@ -11,6 +11,13 @@ const StyledSearch = styled.div`
 
 const StyledInput = styled.input`
   border-color: ${(props) => props.color || 'blue'};
+  width: 95%;
+  border-radius: 5px;
+  padding: 7px 10px;
+  margin: 2px 9px;
+  :hover {
+    background: palegreen;
+  }
 `
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState('')
@@ -45,7 +52,6 @@ const SearchBar = () => {
   return (
     <StyledSearch>
       <StyledInput
-        style={StyledSearchBar}
         type="text"
         placeholder="Search by name"
         onChange={handleChange}
@@ -59,12 +65,12 @@ const SearchBar = () => {
   )
 }
 
-const StyledSearchBar = {
-  width: '95%',
-  borderRadius: '5px',
-  padding: '7px 5px',
-  margin: '2px 9px',
-}
+// const StyledSearchBar = {
+//   width: '95%',
+//   borderRadius: '5px',
+//   padding: '7px 5px',
+//   margin: '2px 9px',
+// }
 
 const StyledSearchIcon = {
   position: 'absolute',
