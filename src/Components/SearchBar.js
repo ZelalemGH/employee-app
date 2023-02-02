@@ -12,11 +12,13 @@ const StyledSearch = styled.div`
 const StyledInput = styled.input`
   border-color: ${(props) => props.color || 'blue'};
   width: 95%;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 7px 10px;
   margin: 2px 9px;
+  height: 30px;
+  font-size: 15px;
   :hover {
-    background: palegreen;
+    background: #f0f4c3;
   }
 `
 const SearchBar = () => {
@@ -44,6 +46,7 @@ const SearchBar = () => {
     const searchedValue = employees.filter((item) => {
       const searchName = item.name.toLowerCase()
       const searchLowerValue = searchValue.toLowerCase()
+
       return searchLowerValue === searchName
     })
     setEmployees(searchedValue)
@@ -53,7 +56,7 @@ const SearchBar = () => {
     <StyledSearch>
       <StyledInput
         type="text"
-        placeholder="Search by name"
+        placeholder="Search employee name"
         onChange={handleChange}
       />
       <FontAwesomeIcon
@@ -76,6 +79,11 @@ const StyledSearchIcon = {
   position: 'absolute',
   right: '53%',
   cursor: 'pointer',
+  backgroundColor: 'rgb(48,168,220)',
+  width: '15px',
+  height: '15px',
+  padding: '9px 10px',
+  borderRadius: '50%',
 }
 
 export default SearchBar

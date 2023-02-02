@@ -12,7 +12,7 @@ const StyledWrapper = styled.div`
   transform: translate(-50%, -50%);
 
   @media (max-width: 599px) {
-    margin-top: 4rem;
+    margin-top: 5rem;
     flex-direction: column;
     align-items: center;
     margin-left: 100px;
