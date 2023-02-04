@@ -15,6 +15,7 @@ const StyledInput = styled.input`
   border-radius: 8px;
   padding: 7px 10px;
   margin: 2px 9px;
+  margin-right: -40px;
   height: 30px;
   font-size: 15px;
   :hover {
@@ -82,7 +83,6 @@ const StyledSearchIcon = {
   height: '15px',
   padding: '9px 10px',
   borderRadius: '50%',
-  marginLeft: '-50px',
 }
 
 export default SearchBar
