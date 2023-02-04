@@ -58,32 +58,36 @@ const EmployeeDetail = () => {
       </Stack>
     )
   }
-  return (
+  return employeeDetail ? (
     <>
       <StyledEmployeeDetail>
-        <Image src={employeeDetail.image} alt={employeeDetail.image} />
+        <Image src={employeeDetail?.image} alt={employeeDetail?.image} />
         <div>
-          <h3>{employeeDetail.name}</h3>
-          <p>{employeeDetail.occupation}</p>
+          <h3>{employeeDetail?.name}</h3>
+          <p>{employeeDetail?.occupation}</p>
         </div>
       </StyledEmployeeDetail>
       <StyledPaper variant="outlined">
         <h3>Call Office</h3>
-        <p>{employeeDetail.callOffice}</p>
+        <p>{employeeDetail?.callOffice}</p>
       </StyledPaper>
       <StyledPaper variant="outlined">
         <h3>Call Mobile</h3>
-        <p>{employeeDetail.callMobile}</p>
+        <p>{employeeDetail?.callMobile}</p>
       </StyledPaper>
       <StyledPaper variant="outlined">
         <h3>SMS</h3>
-        <p>{employeeDetail.sms}</p>
+        <p>{employeeDetail?.sms}</p>
       </StyledPaper>
       <StyledPaper variant="outlined">
         <h3>Email</h3>
-        <p>{employeeDetail.email}</p>
+        <p>{employeeDetail?.email}</p>
       </StyledPaper>
     </>
+  ) : (
+    <div style={{ border: '1px solid red', width: '180px', padding: '10px' }}>
+      Employee not available !
+    </div>
   )
 }
 

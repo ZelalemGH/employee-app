@@ -19,10 +19,11 @@ export const StyledButton = {
   height: '40px',
   color: '#fff',
   backgroundColor: '#000',
+  margin: '5px',
   fontSize: '22px',
   border: 'none',
   padding: '0.5rem 1rem',
-  borderRadius: '8px',
+  borderRadius: '5px',
   '&:hover': {
     backgroundColor: '#333',
     color: '#fff',

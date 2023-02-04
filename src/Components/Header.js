@@ -5,7 +5,6 @@ import styled from 'styled-components'
 const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
   width: 50%;
   padding: 0 40px;
   margin: 2px 2px;

@@ -11,14 +11,14 @@ const StyledSearch = styled.div`
 
 const StyledInput = styled.input`
   border-color: ${(props) => props.color || 'blue'};
-  width: 95%;
+  width: 90%;
   border-radius: 8px;
   padding: 7px 10px;
   margin: 2px 9px;
   height: 30px;
   font-size: 15px;
   :hover {
-    background: #f0f4c3;
+    background: #ffebee;
   }
 `
 const SearchBar = () => {
@@ -76,14 +76,13 @@ const SearchBar = () => {
 // }
 
 const StyledSearchIcon = {
-  position: 'absolute',
-  right: '53%',
   cursor: 'pointer',
-  backgroundColor: 'rgb(48,168,220)',
+  backgroundColor: '#81D4FA',
   width: '15px',
   height: '15px',
   padding: '9px 10px',
   borderRadius: '50%',
+  marginLeft: '-50px',
 }
 
 export default SearchBar

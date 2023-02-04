@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledWrapper = styled.div`
   min-width: 800px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #e3f2fd;
   display: flex;
   gap: 10px;
   position: absolute;
