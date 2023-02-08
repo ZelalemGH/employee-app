@@ -16,13 +16,48 @@ const EmployeeListItem = () => {
     return (
       <Stack spacing={1}>
         {/* For variant="text", adjust the height via font-size */}
-        <Skeleton variant="circular" width={60} height={60} />
-        <Skeleton variant="circular" width={60} height={60} />
-        <Skeleton variant="circular" width={60} height={60} />
-        <Skeleton variant="circular" width={60} height={60} />
-        <Skeleton variant="circular" width={60} height={60} />
-        <Skeleton variant="circular" width={60} height={60} />
-        <Skeleton variant="circular" width={60} height={60} />
+        <Skeleton
+          style={{ margin: '1rem' }}
+          variant="circular"
+          width={60}
+          height={60}
+        />
+        <Skeleton
+          style={{ margin: '1rem' }}
+          variant="circular"
+          width={60}
+          height={60}
+        />
+        <Skeleton
+          style={{ margin: '1rem' }}
+          variant="circular"
+          width={60}
+          height={60}
+        />
+        <Skeleton
+          style={{ margin: '1rem' }}
+          variant="circular"
+          width={60}
+          height={60}
+        />
+        <Skeleton
+          style={{ margin: '1rem' }}
+          variant="circular"
+          width={60}
+          height={60}
+        />
+        <Skeleton
+          style={{ margin: '1rem' }}
+          variant="circular"
+          width={60}
+          height={60}
+        />
+        <Skeleton
+          style={{ margin: '1rem' }}
+          variant="circular"
+          width={60}
+          height={60}
+        />
       </Stack>
     )
   }

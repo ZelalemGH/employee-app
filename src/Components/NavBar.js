@@ -14,6 +14,7 @@ function NavBar() {
     { item: 'Home', to: '/employee-app' },
     { item: 'Add-Employees', to: '/add-employees' },
     { item: 'EmployeesList', to: '/employees-list' },
+    { item: 'Article', to: '/article' },
   ]
   const { isLoggedIn } = useContext(EmployeesContext)
   return (

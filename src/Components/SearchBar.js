@@ -8,7 +8,6 @@ const StyledSearch = styled.div`
   display: flex;
   align-items: center;
 `
-
 const StyledInput = styled.input`
   border-color: ${(props) => props.color || 'blue'};
   width: 90%;
@@ -32,17 +31,6 @@ const SearchBar = () => {
     setSearchValue(event.target.value)
   }
 
-  // const handleSearch = (event) => {
-  //const searchedValue = employees.filter((item) => item.name.toLowerCase().includes(event.target.value.toLowerCase()))
-  //if (searchValue == '') {
-  //     return item
-  //   } else if (item.name.toLowerCase().includes(searchValue.toLowerCase()))
-  //   return item.name})
-  //   setSearchValue(searchedValue)
-  //   setEmployees(searchedValue)
-  //   setEmployeeDetail(searchedValue[0])
-  // }
-
   const handleSearch = () => {
     const searchedValue = employees.filter((item) => {
       const searchName = item.name.toLowerCase()
@@ -53,6 +41,7 @@ const SearchBar = () => {
     setEmployees(searchedValue)
     setEmployeeDetail(searchedValue[0])
   }
+
   return (
     <StyledSearch>
       <StyledInput
@@ -68,13 +57,6 @@ const SearchBar = () => {
     </StyledSearch>
   )
 }
-
-// const StyledSearchBar = {
-//   width: '95%',
-//   borderRadius: '5px',
-//   padding: '7px 5px',
-//   margin: '2px 9px',
-// }
 
 const StyledSearchIcon = {
   cursor: 'pointer',
