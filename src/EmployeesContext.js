@@ -7,9 +7,18 @@ export function EmployeeProvider(props) {
   const [employeeDetail, setEmployeeDetail] = useState({})
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-
+  const [isAuthenticated, setIsAuthenticated] = useState(false)  
+  
+    useEffect(() => {
+      const token = localStorage.getItem('token')
+      if(token) {
+        // const decodedToken = jwt_decode(token)
+        setIsAuthenticated(true)
+      }else{
+        setIsAuthenticated(false)
+      }
+    }, [])
+  
   useEffect(() => {
     fetch(`https://lit-dusk-21328.herokuapp.com/api/employees/allemployees`)
       .then((res) => res.json()) // getting the response in a json format
@@ -18,7 +27,6 @@ export function EmployeeProvider(props) {
         setEmployees(data) // to update the value of employees and getting the data itself
         setEmployeeDetail(data[0])
         setIsLoading(false)
-        setIsLoggedIn(true)
       })
       .catch((err) => {
         setIsError(true)
@@ -34,7 +42,7 @@ export function EmployeeProvider(props) {
         isLoading,
         isError,
         setEmployees,
-        isLoggedIn,
+        isAuthenticated,
       }}
     >
       {props.children}

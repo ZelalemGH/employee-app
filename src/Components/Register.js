@@ -3,20 +3,18 @@ import { useState } from "react";
 import { Button } from "@mui/material";
 import axios from "axios";
 
-function Register () {
-  const [userName, setUserName] = useState("");
+function Register() {
+  const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // console.log("user info", { userName, email, password});
-
   const baseUrl = "https://cryptic-wildwood-26961.herokuapp.com/api/user";
 
-  const userInfo = { userName, email, password };
+  const userInfo = { username, email, password };
   const handleSignup = async () => {
     try {
       const response = await axios.post(`${baseUrl}/signup`, userInfo);
-      console.log('user info', response);
+      console.log("user info", response);
     } catch (err) {
       console.log(err);
     }
@@ -31,7 +29,7 @@ function Register () {
           className="register-input"
           type="text"
           placeholder="Please enter your user name"
-          value={userName}
+          value={username}
           onChange={(e) => setUserName(e.target.value)}
         />
         <label htmlfor="email">email</label>
@@ -39,7 +37,7 @@ function Register () {
           className="register-input"
           type="email"
           placeholder="youremail@gmail.com"
-          name={email}
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlfor="password">password</label>
@@ -47,7 +45,7 @@ function Register () {
           className="register-input"
           type="password"
           placeholder="password"
-          name={password}
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button
@@ -60,6 +58,6 @@ function Register () {
       </form>
     </div>
   );
-};
+}
 
 export default Register;
