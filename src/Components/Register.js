@@ -1,54 +1,65 @@
-import React from 'react'
-import { useState } from 'react'
-import { Button } from '@mui/material'
+import React from "react";
+import { useState } from "react";
+import { Button } from "@mui/material";
+import axios from "axios";
 
-export const Register = (props) => {
-  const [fullName, setFullName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+function Register () {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    localStorage.setItem('fullName', fullName)
-    localStorage.setItem('email', email)
-    localStorage.setItem('password', password)
-  }
+  // console.log("user info", { userName, email, password});
+
+  const baseUrl = "https://cryptic-wildwood-26961.herokuapp.com/api/user";
+
+  const userInfo = { userName, email, password };
+  const handleSignup = async () => {
+    try {
+      const response = await axios.post(`${baseUrl}/signup`, userInfo);
+      console.log('user info', response);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="zee-form-container">
-      <h2 style={{ textAlign: 'Center' }}>Register</h2>
-      <form className="register-form" onSubmit={handleSubmit}>
-        <label htmlfor="name">Full Name</label>
+      <h2 style={{ textAlign: "Center" }}>Sign up</h2>
+      <form className="register-form">
+        <label htmlfor="name">User Name</label>
         <input
-          onChange={(e) => setFullName(e.target.value)}
+          className="register-input"
           type="text"
-          placeholder="Please enter your full name"
-          id="fullName"
-          name="fullName"
+          placeholder="Please enter your user name"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
         />
         <label htmlfor="email">email</label>
         <input
-          onChange={(e) => setEmail(e.target.value)}
+          className="register-input"
           type="email"
           placeholder="youremail@gmail.com"
-          id="email"
-          name="email"
+          name={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlfor="password">password</label>
         <input
-          onChange={(e) => setPassword(e.target.value)}
+          className="register-input"
           type="password"
           placeholder="password"
-          id="password"
-          name="password"
+          name={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <Button type="submit" variant="contained" style={{ margin: '2rem' }}>
-          Register
+        <Button
+          onClick={handleSignup}
+          variant="contained"
+          style={{ margin: "2rem" }}
+        >
+          Sign up
         </Button>
       </form>
-      <button className="link-btn" onClick={() => props.toggleForm('Login')}>
-        Already have an account? Login here.
-      </button>
     </div>
-  )
-}
+  );
+};
+
+export default Register;

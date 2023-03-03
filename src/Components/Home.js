@@ -1,15 +1,23 @@
 import React from 'react'
-import { Login } from './Login'
-import { Register } from './Register'
-import { useState } from 'react'
+import { Button } from '@mui/material'
+import { useNavigate } from 'react-router'
 
-function Home(props) {
-  const [currentForm, setCurrentForm] = useState('Login')
-
-  const toggleForm = (formName) => {
-    setCurrentForm(formName)
+function Home() {
+  const navigate = useNavigate()
+  const handleLogin = () => {
+    console.log("login")
+    navigate({
+      pathname: "/login"
+    })
   }
-  console.log(currentForm)
+
+  const handleRegister = () => {
+    navigate({
+      pathname: "/signup"
+    })
+  }
+
+
   return (
     <div style={{ margin: '0 auto' }}>
       <h1 style={{ textAlign: 'Center', padding: '10px' }}>
@@ -24,11 +32,12 @@ function Home(props) {
         world.[4] Erta Ale means "smoking mountain" in the local Afar language
         and its southernmost pit is known locally as "the gateway to Hell".
       </p>
-      {currentForm === 'Login' ? (
-        <Login setIsLoggedIn={props.setIsLoggedIn} toggleForm={toggleForm} />
-      ) : (
-        <Register toggleForm={toggleForm} />
-      )}
+      <div>
+      <Button onClick={handleLogin} variant="contained" style={{ margin: '2rem' }}>
+          Login
+      </Button>
+      <Button onClick={handleRegister} variant="contained" style={{ margin: '2rem' }}>Register</Button>
+      </div>
     </div>
   )
 }
