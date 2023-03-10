@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
@@ -11,15 +11,31 @@ import { EmployeesContext } from "../EmployeesContext";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+text-decoration: none;
+
+`
 
 function NavBar() {
+  const { isAuthenticated, handleLogout } = useContext(EmployeesContext);
+  console.log("is auth", isAuthenticated);
+  const navigate = useNavigate();
+
   const navItems = [
     { item: "Add-Employees", to: "/add-employees" },
     { item: "EmployeesList", to: "/employees-list" },
     { item: "Article", to: "/article" },
   ];
-  const { isAuthenticated } = useContext(EmployeesContext);
-  console.log("is auth", isAuthenticated);
+
+  const handleLogoutRedirect = () => {
+    handleLogout();
+    navigate({
+      pathname: "/employee-app",
+    });
+  };
+
   return (
     <>
       <AppBar sx={{ height: "8%", backgroundColor: "#2196F3" }}>
@@ -33,11 +49,32 @@ function NavBar() {
             <PopupState variant="popover" popupId="demo-popup-menu">
               {(popupState) => (
                 <React.Fragment>
-                  <MenuIcon {...bindTrigger(popupState)}/>
+                  <MenuIcon {...bindTrigger(popupState)} />
                   <Menu {...bindMenu(popupState)}>
-                    <MenuItem onClick={popupState.close}>Add-Employees</MenuItem>
-                    <MenuItem onClick={popupState.close}>Employees-List</MenuItem>
-                    <MenuItem onClick={popupState.close}>Article</MenuItem>
+                    <MenuItem onClick={popupState.close}>
+                      <Link
+                        to="/add-employees"
+                        style={{ textDecoration: "none", color: "#fff" }}
+                      >
+                        Add-Employees
+                      </Link>
+                    </MenuItem>
+                    <MenuItem onClick={popupState.close}>
+                      <Link
+                        to="/employees-list"
+                        style={{ textDecoration: "none", color: "#fff" }}
+                      >
+                        Employees-List
+                      </Link>
+                    </MenuItem>
+                    <MenuItem onClick={popupState.close}>
+                      <Link
+                        to="/article"
+                        style={{ textDecoration: "none", color: "#fff" }}
+                      >
+                        Article
+                      </Link>
+                    </MenuItem>
                   </Menu>
                 </React.Fragment>
               )}
@@ -51,18 +88,23 @@ function NavBar() {
             Employees Profile
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Link to="/employee-app">
+            <StyledLink to="/employee-app" >
               <Button sx={{ color: "#fff" }}>Home</Button>
-            </Link>
+            </StyledLink>
             {isAuthenticated &&
               navItems.map((item) => (
-                <Link to={item.to} style={{ textDecoration: "none" }}>
+                <StyledLink to={item.to} >
                   <Button key={item} sx={{ color: "#fff" }}>
                     {item.item}
                   </Button>
-                </Link>
+                </StyledLink>
               ))}
           </Box>
+          {isAuthenticated && (
+            <Button onClick={handleLogoutRedirect} sx={{ color: "#fff" }}>
+              Sign-out
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
     </>

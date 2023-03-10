@@ -2,11 +2,17 @@ import React from "react";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { EmployeesContext } from "../EmployeesContext";
+
 
 function Register() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setIsAuthenticated } = useContext(EmployeesContext);
+  const navigate = useNavigate();
 
   const baseUrl = "https://cryptic-wildwood-26961.herokuapp.com/api/user";
 
@@ -15,6 +21,10 @@ function Register() {
     try {
       const response = await axios.post(`${baseUrl}/signup`, userInfo);
       console.log("user info", response);
+      setIsAuthenticated(true);
+      navigate({
+        pathname: "/employees-list"
+      });
     } catch (err) {
       console.log(err);
     }
@@ -53,7 +63,7 @@ function Register() {
           variant="contained"
           style={{ margin: "2rem" }}
         >
-          Sign up
+          Register
         </Button>
       </form>
     </div>

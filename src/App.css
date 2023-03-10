@@ -2,13 +2,17 @@
   margin: 0;
 }
 
+body {
+  background-image: url(assets/images/abstract-.jpg);
+}
+
 .App {
   max-width: 900px;
   margin: 6rem auto;
   background-color: #f4f4f4;
   height: 90vh;
   position: relative;
-  /* background-image: url(assets/images/mountains-.jpg); */
+  background-image: url(assets/images/background-jpg.jpg);
 }
 
 .zee-form-container,
@@ -31,6 +35,8 @@
 label {
   text-align: left;
   padding: 0.25rem 0;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .user-input {
@@ -58,6 +64,6 @@ button {
 
 .link-btn {
   background-color: none;
-  color: rgb(17, 12, 153);
+  /* color: rgb(17, 12, 153); */
   text-decoration: underline;
 }
